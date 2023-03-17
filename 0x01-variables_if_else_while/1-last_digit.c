@@ -5,7 +5,7 @@
 /**
  * main - Entry point of the program
  *
- * Description: This program generates a random number and prints its last digit
+ * Description: Generate a random number and print its last digit
  * Return: Always 0 (Success)
  */
 int main(void)
@@ -13,7 +13,7 @@ int main(void)
 	int n;
 
 	srand(time(0));
-	n= rand() - RAND_MAX / 2;
+	n = rand() - RAND_MAX / 2;
 
 	printf("Last digit of %d is ", n);
 

@@ -3,17 +3,19 @@
 #include <time.h>
 /* more headers goes there */
 
-/* 
- * When the program is executed, it will generate a random number, 
+/**
+ * main - Entry point
+ *
+ * When the program is executed, it will generate a random number
  * store it in n,
- * and print whether the number is positive, negative, or zero. 
+ * and print whether the number is positive, negative, or zero
  */
 int main(void)
 {
 	int n;
 	srand(time(0));
-
 	n = rand() - RAND_MAX / 2;
+
 	if (n > 0)
 	{
 		printf("%d is positive\n", n);

@@ -15,14 +15,14 @@ int main(void)
 		{
 			for (k = j + 1; k < 10; k++)
 			{
-				putchar((i % 3) + '0');
-				putchar(((j % 3) + 3 * (j / 3)) + '0');
-				putchar(((k % 3) + 6 * (k / 3)) + '0');
-				if (i != 7 || j != 8 || k != 9)
+				if (i !=0 || j !=1 || k!=2)
 				{
 					putchar(',');
 					putchar(' ');
 				}
+				putchar((i % 10) + '0');
+				putchar((j % 10) + '0');
+				putchar((k % 10) + '0');
 			}
 		}
 	}

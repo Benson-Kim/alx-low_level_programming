@@ -10,14 +10,11 @@
 int print_last_digit(int num)
 {
 	int last_digit;
-	long long abs_num = num
 
-    /* Get the absolute value of num to handle negative numbers */
-	if (abs_num < 0)
-		abs_num = -abs_num;
+	last_digit = num % 10;
 
-    /* Get the last digit of num */
-	last_digit = abs_num % 10;
+	if (last_digit < 0)
+		last_digit = -last_digit;
 
     /* Print the last digit */
 	_putchar(last_digit + '0');

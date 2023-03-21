@@ -29,7 +29,7 @@ int main(void)
 
 	    /* If this is not the last number, print a comma and space */
 	    if (i < 50)
-	        printf(", ");
+		    printf(", ");
 
 	    /* Update the previous two Fibonacci numbers */
 	    prev = curr;
@@ -39,5 +39,5 @@ int main(void)
 	/* Print a newline to end the output */
 	printf("\n");
 
-	return 0;
+	return (0);
 }

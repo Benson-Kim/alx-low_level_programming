@@ -12,15 +12,20 @@ int main(void)
 
 	printf("%lu, %lu", n1, n2);
 
-	for (count = 3; count <= 51; count++)
+	for (count = 3; count <= 50; count++)
 	{
-		printf(", %lu", n3);
+		if (count == 50)
+		{
+			printf("%lu \n", n3);
+		}
+		else
+		{
+			printf("%lu, ", n3);
+		}
 		n3 = n1 + n2;
 		n1 = n2;
 		n2 = n3;
 	}
-
-	printf("\n");
 
 	return (0);
 }

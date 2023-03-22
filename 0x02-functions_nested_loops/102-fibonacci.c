@@ -1,43 +1,26 @@
 #include <stdio.h>
 
 /**
- * main - Prints the first 50 Fibonacci numbers
+ * main - prints the first 50 Fibonacci numbers
  *
- * Return: 0 on success
+ * Return: Always 0
  */
-
 int main(void)
 {
-	int i;
-	long int prev, curr, next;
+	int count, n1 = 1, n2 = 2, n3;
 
-	/* Initialize the first two Fibonacci numbers */
-	prev = 1;
-	curr = 2;
+	printf("%d, %d", n1, n2);
 
-	/* Print the first two Fibonacci numbers */
-	printf("%ld, %ld, ", prev, curr);
-
-	/* Compute and print the next 48 Fibonacci numbers */
-	for (i = 3; i <= 50; i++)
+	for (count = 2; count < 50; count++)
 	{
-	    /* Compute the next Fibonacci number */
-	    next = prev + curr;
-
-	    /* Print the next Fibonacci number */
-	    printf("%ld", next);
-
-	    /* If this is not the last number, print a comma and space */
-	    if (i < 50)
-		    printf(", ");
-
-	    /* Update the previous two Fibonacci numbers */
-	    prev = curr;
-	    curr = next;
+		n3 = n1 + n2;
+		printf(", %d", n3);
+		n1 = n2;
+		n2 = n3;
 	}
 
-	/* Print a newline to end the output */
 	printf("\n");
 
 	return (0);
 }
+

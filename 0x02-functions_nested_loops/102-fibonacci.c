@@ -14,7 +14,7 @@ int main(void)
 
 	for (count = 3; count <= 50; count++)
 	{
-		printf(", %d", n3);
+		printf(", %lu", n3);
 		n3 = n1 + n2;
 		n1 = n2;
 		n2 = n3;

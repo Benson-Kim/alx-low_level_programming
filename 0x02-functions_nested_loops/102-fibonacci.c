@@ -15,6 +15,8 @@ int main(void)
 	printf("%lu, ", first);
 	printf("%lu, ", second);
 
+	next = first + second;
+
 	for (count = 3; count <= 50; count++)
 	{
 		if (count == 50)

@@ -1,13 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - causes an infinite loop
- *
- * Description: This program causes an infinite loop
- *              Commented code is preventing it
- *
- * Return: Always 0 (Success)
- */
+* main - causes an infinite loop
+* Return: 0
+*/
 
 int main(void)
 {
@@ -15,7 +11,7 @@ int main(void)
 
 	printf("Infinite loop incoming :(\n");
 
-       	i = 0;
+	i = 0;
 
 	while (i < 10)
 	{
@@ -26,4 +22,3 @@ int main(void)
 
 	return (0);
 }
-

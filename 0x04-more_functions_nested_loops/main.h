@@ -26,5 +26,5 @@ void print_square(int size);
 void print_triangle(int size);
 
 void print_number(int n);
+
 #endif /* MAIN_H */
->>>>>>> f3e62f7489a9543c039ef42152379fdf3579692c

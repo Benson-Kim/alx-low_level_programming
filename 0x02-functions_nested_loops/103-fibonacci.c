@@ -1,35 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - Prints the first 98 Fibonacci numbers, separated by comma and space
+ * main - prints the sum of even-valued terms in the Fibonacci sequence
+ *	    whose values do not exceed 4,000,000
  *
- * Return: 0 on success
+ * Return: Always 0
  */
-
 int main(void)
 {
-    int i, n = 98;
-    unsigned int fib1 = 1, fib2 = 2, next;
+	int prev = 1;
+	int curr = 2;
+	int sum = 2;
+	int next;
 
-    /* Print the first two Fibonacci numbers */
-    printf("%u, %u", fib1, fib2);
+	while (curr <= 4000000)
+	{
+		next = prev + curr;
+		prev = curr;
+		curr = next;
+		if (curr % 2 == 0)
+			sum += curr;
+	}
 
-    /* Compute and print the remaining 96 Fibonacci numbers */
-    for (i = 3; i <= n; i++)
-    {
-        next = fib1 + fib2;
-        printf(", %u", next);
+	printf("%d\n", sum);
 
-        /* Shift the variables to prepare for the next iteration */
-        fib1 = fib2;
-        fib2 = next;
-
-        /* If the next Fibonacci number overflows, exit the loop */
-        if (fib2 < fib1)
-            break;
-    }
-
-    printf("\n");
-
-    return 0;
+	return (0);
 }
+

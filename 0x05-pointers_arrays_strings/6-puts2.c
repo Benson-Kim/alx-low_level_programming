@@ -15,7 +15,7 @@ void puts2(char *str)
 		putchar(str[i]);
 
 
-		if (str[i+1] == '\0')
+		if (str[i + 1] == '\0')
 			break;
 	}
 

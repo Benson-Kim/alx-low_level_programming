@@ -16,7 +16,6 @@ int main(void)
 
 	srand(time(NULL));
 
-	// Generate password
 	for (i = 0; i < PASSWORD_LENGTH; i++) {
 		password[i] = valid_characters[rand() % num_valid_characters];
 		if ('a' <= password[i] && password[i] <= 'z') {
@@ -31,12 +30,10 @@ int main(void)
 	}
 	password[PASSWORD_LENGTH] = '\0';
 
-	// Check if password meets requirements
 	if (has_lower && has_upper && has_digit) {
 		printf("%s\n", password);
 	}
 	else {
-		// Regenerate password until it meets requirements
 		while (!has_lower || !has_upper || !has_digit) {
 			has_lower = 0;
 			has_upper = 0;

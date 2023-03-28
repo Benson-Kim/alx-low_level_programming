@@ -2,31 +2,24 @@
 #include <stdlib.h>
 #include <time.h>
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
+#define PASSWORD_LENGTH 10
+
 int main(void)
 {
-    int password[6];
-    int i, sum;
+	const char valid_characters[] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	const int num_valid_characters = sizeof(valid_characters) - 1;
+	char password[PASSWORD_LENGTH + 1];
+	int i;
 
-    srand(time(NULL)); /* initialize random number generator */
+	srand(time(NULL));
 
-    /* generate random password */
-    for (i = 0; i < 5; i++)
-    {
-        password[i] = rand() % 10;
-        sum += password[i];
-        putchar(password[i] + '0');
-    }
+	for (i = 0; i < PASSWORD_LENGTH; i++) {
+		password[i] = valid_characters[rand() % num_valid_characters];
+	}
+	password[PASSWORD_LENGTH] = '\0';
 
-    /* generate last character based on sum of previous characters */
-    password[5] = (sum ^ 0xef) & 0xff;
-    putchar(password[5] + '0');
+	printf("%s\n", password);
 
-    putchar('\n');
-
-    return (0);
+	return 0;
 }
+

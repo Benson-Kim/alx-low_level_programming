@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdlib.h>
+
 int _putchar(char c);
 
 /* 0. Great leaders are willing to sacrifice their own personal interests for the good of the team */

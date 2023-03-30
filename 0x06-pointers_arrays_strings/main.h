@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+int _putchar(char c);
+
 /* 0. Great leaders are willing to sacrifice their own personal interests for the good of the team */
 char *_strcat(char *dest, char *src);
 

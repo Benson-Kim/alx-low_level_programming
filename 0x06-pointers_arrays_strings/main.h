@@ -25,4 +25,16 @@ char *cap_string(char *);
 /* 7. You are a slave to the code, let it control you or be free */
 char *leet(char *);
 
+/* 8. rot13 */
+char *rot13(char *);
+
+/* 9. Numbers have life; they're not just symbols on paper */
+void print_number(int n);
+
+/*11. It is the addition of strangeness to beauty that constitutes the romantic character in art */
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+
+/*12. Noise is a buffer, more effective than cubicles or booth walls */
+void print_buffer(char *b, int size);
+
 #endif /* MAIN_H */

@@ -1,45 +1,50 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
+/**
+ * infinite_add - Adds two numbers stored as strings
+ * @n1: First number
+ * @n2: Second number
+ * @r: Buffer to store the result
+ * @size_r: Size of the buffer
+ *
+ * Return: Pointer to the result, or 0 if result can't be stored in buffer
+ */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int carry = 0, sum = 0, len1, len2, i, j, k;
+	int len1, len2, i, j, sum, carry = 0;
 
-	len1 = strlen(n1);
-	len2 = strlen(n2);
+	/* Determine the length of the strings */
+	for (len1 = 0; n1[len1]; len1++)
+		;
+	for (len2 = 0; n2[len2]; len2++)
+		;
 
-	if (len1 + 1 > size_r || len2 + 1 > size_r) {
-		return 0;
-	}
+	/* Check if the result can be stored in the buffer */
+	if (size_r <= len1 || size_r <= len2)
+		return (0);
 
-	i = len1 - 1;
-	j = len2 - 1;
-	k = size_r - 2;
-	r[size_r - 1] = '\0';
-
-	while (i >= 0 || j >= 0 || carry) {
+	/* Add the digits and store the result in the buffer */
+	for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry; i--, j--)
+	{
 		sum = carry;
-
-		if (i >= 0) {
+		if (i >= 0)
 			sum += n1[i] - '0';
-			i--;
-		}
-
-		if (j >= 0) {
+		if (j >= 0)
 			sum += n2[j] - '0';
-			j--;
-		}
-
-		if (k < 0) {
-			return 0;
-		}
-
 		carry = sum / 10;
-		r[k] = sum % 10 + '0';
-		k--;
+		r[len1 - i - 1 + (len2 - j - 1)] = (sum % 10) + '0';
 	}
 
-	return &r[k + 1];
+	/* Reverse the string in the buffer */
+	for (i = 0, j = len1 + len2 - 2; i < j; i++, j--)
+	{
+		sum = r[i];
+		r[i] = r[j];
+		r[j] = sum;
+	}
+
+	/* Add the null terminator and return the pointer to the result */
+	r[len1 + len2 - 1] = '\0';
+	return (r);
 }
 

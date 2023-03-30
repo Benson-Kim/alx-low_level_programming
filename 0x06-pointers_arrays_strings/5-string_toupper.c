@@ -8,17 +8,17 @@
  */
 char *string_toupper(char *str)
 {
-    char *p = str;
+	char *p = str;
 
-    /* Iterate over each character of the string */
-    while (*p)
-    {
-        /* If character is lowercase, convert it to uppercase */
-        if (*p >= 'a' && *p <= 'z')
-            *p -= 32;
+	/* Iterate over each character of the string */
+	while (*p)
+	{
+		/* If character is lowercase, convert it to uppercase */
+		if (*p >= 'a' && *p <= 'z')
+			*p -= 32;
 
-        p++; /* Move to the next character */
-    }
+		p++; /* Move to the next character */
+	}
 
-    return (str);
+	return (str);
 }

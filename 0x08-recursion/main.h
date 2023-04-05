@@ -24,6 +24,6 @@ int _sqrt_recursion(int n);
 
 /* is_prime_number - checks whether a given number is prime */
 int is_prime_number(int n);
-
+int is_prime_helper(int n, int div);
 #endif /* MAIN_H */
 

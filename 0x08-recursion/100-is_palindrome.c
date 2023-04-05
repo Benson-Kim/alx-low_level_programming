@@ -9,11 +9,13 @@
 int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
+
 	return (is_palindrome_helper(s, 0, len - 1));
 }
 
 /**
- * is_palindrome_helper - Recursive helper function for checking if a string is a palindrome
+ * is_palindrome_helper - Recursive helper function 
+ * for checking if a string is a palindrome
  * @s: The string to check
  * @start: The starting index of the substring to check
  * @end: The ending index of the substring to check

@@ -9,19 +9,20 @@
  */
 int wildcmp(char *s1, char *s2)
 {
-	/* If both strings are empty, they are identical */
 	if (*s1 == '\0' && *s2 == '\0')
 		return (1);
 
-	/* If s2 starts with *, recursively check s1 against s2 with * removed */
 	if (*s2 == '*')
 	{
-		if (*(s2 + 1) == '\0') /* If * is the last character in s2, s1 and s2 are identical */
+		if (*(s2 + 1) == '\0') 
+			/* If * is the last character in s2, s1 and s2 are identical */
 			return (1);
-		else if (*s1 == '\0') /* If s1 is empty and * is not the last character in s2, they are not identical */
+		else if (*s1 == '\0')
+		       	/* If s1 is empty and * is not the last character in s2, they are not identical */
 			return (0);
 		else
-			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2)); /* Check s1 against s2 with * removed and check s1 with * as a placeholder */
+			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
+	       	/* Check s1 against s2 with * removed and check s1 with * as a placeholder */
 	}
 
 	/* If the current characters match, recursively check the next characters */

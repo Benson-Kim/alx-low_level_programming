@@ -27,5 +27,11 @@ int sqrt_helper(int n, int low, int high);
 int is_prime_number(int n);
 int is_prime_helper(int n, int div);
 
+int is_palindrome(char *s);
+int is_palindrome_helper(char *s, int start, int end);
+int _strlen_recursion(char *s);
+
+int wildcmp(char *s1, char *s2);
+
 #endif /* MAIN_H */
 

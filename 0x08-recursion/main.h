@@ -21,9 +21,11 @@ int _pow_recursion(int x, int y);
 
 /* _sqrt_recursion - returns the natural square root of a number */
 int _sqrt_recursion(int n);
+int _sqrt_helper(int n, int low, int high);
 
 /* is_prime_number - checks whether a given number is prime */
 int is_prime_number(int n);
 int is_prime_helper(int n, int div);
+
 #endif /* MAIN_H */
 

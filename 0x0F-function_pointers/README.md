@@ -1,13 +1,15 @@
-Function Examples
+<h1>0x0F. C - Function pointers</h1>
+
 This repository contains examples of C functions for various tasks. The functions are written in compliance with the Betty style and betty documentation, and follow certain requirements such as no use of global variables and a maximum of 5 functions per file. The functions also only use malloc, free, and exit from the standard C library, and implement their own versions of other common functions.
 
-Functions
-print_name
+# Functions
+## print_name
 This function takes a name and a function pointer as parameters, and uses the function pointer to print the name in a certain way. The function pointer should take a char * as a parameter and return void.
 
-c
-Copy code
+```c
 void print_name(char *name, void (*f)(char *));
+```
+
 array_iterator
 This function takes an array, the size of the array, and a function pointer as parameters. It uses the function pointer to perform an action on each element of the array. The function pointer should take an int as a parameter and return void.
 

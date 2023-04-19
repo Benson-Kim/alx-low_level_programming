@@ -10,56 +10,64 @@ This function takes a name and a function pointer as parameters, and uses the fu
 void print_name(char *name, void (*f)(char *));
 ```
 
-array_iterator
+## array_iterator
 This function takes an array, the size of the array, and a function pointer as parameters. It uses the function pointer to perform an action on each element of the array. The function pointer should take an int as a parameter and return void.
 
-c
-Copy code
+```c
 void array_iterator(int *array, size_t size, void (*action)(int));
-int_index
+```
+
+## int_index
 This function takes an array, the size of the array, and a function pointer as parameters. It uses the function pointer to compare values in the array, and returns the index of the first element for which the function pointer does not return 0. If no element matches, it returns -1. If size <= 0, it also returns -1.
 
-c
-Copy code
+```c
 int int_index(int *array, int size, int (*cmp)(int));
-get_op_func
-This function takes an operator as a parameter and returns a function pointer that performs the corresponding operation on two integers. If the operator is invalid, it returns NULL.
+```
 
-c
-Copy code
+
+## get_op_func
+This function takes an operator as a parameter and returns a function pointer that performs the corresponding operation on two integers. If the operator is invalid, it returns NULL.
+```c
 int (*get_op_func(char c))(int, int);
-Helper Functions
+```
+
+
+## Helper Functions
 The following helper functions are also provided for use with the above functions:
 
-_putchar
+### _putchar
 This function takes a character as a parameter and writes it to the standard output.
 
-c
-Copy code
+```c
 void _putchar(char c);
-_strlen
+```
+
+### _strlen
 This function takes a string as a parameter and returns its length.
 
-c
-Copy code
+```c
 int _strlen(char *s);
-_puts
+```
+
+### _puts
 This function takes a string as a parameter and writes it to the standard output, followed by a newline character.
 
-c
-Copy code
+```c
 void _puts(char *s);
+```
+
 _isdigit
 This function takes an integer as a parameter and returns 1 if it is a digit, and 0 otherwise.
-
-c
-Copy code
+```c
 int _isdigit(int c);
-_atoi
+```
+
+### _atoi
 This function takes a string as a parameter and converts it to an integer.
 
-c
-Copy code
-int _atoi(char *s);
-Usage
+```c
+### int _atoi(char *s);
+```
+
+# Usage
 Each function has its own set of usage instructions, which can be found in the respective function's description above. Additionally, each function has its own set of files that must be compiled together for proper usage.

@@ -2,29 +2,28 @@
 
 /**
  * get_op_func - Selects the correct function to perform the operation
- * asked by the user
+ * @s: The operation to be performed
  *
- * @c: Operator character
- *
- * Return: Pointer to the function that corresponds to the operator
- * given as a parameter, NULL if the operator is invalid
+ * Return: A pointer to the function corresponding to the operation
  */
-int (*get_op_func(char c))(int, int)
+int (*get_op_func(char *s))(int, int)
 {
-	switch (c)
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
+
+	while (ops[i].op != NULL)
 	{
-		case '+':
-			return (op_add);
-		case '-':
-			return (op_sub);
-		case '*':
-			return (op_mul);
-		case '/':
-			return (op_div);
-		case '%':
-			return (op_mod);
-		default:
-			return (NULL);
+	  if (*(ops[i].op) == *s)
+		return (ops[i].f);
+	  i++;
 	}
+	return (NULL);
 }
 

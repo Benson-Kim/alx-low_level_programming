@@ -2,11 +2,10 @@
 
 /**
  * op_add - Adds two integers
+ * @a: The first integer to be added
+ * @b: The second integer to be added
  *
- * @a: First integer
- * @b: Second integer
- *
- * Return: Sum of a and b
+ * Return: The result of the addition
  */
 int op_add(int a, int b)
 {
@@ -15,11 +14,10 @@ int op_add(int a, int b)
 
 /**
  * op_sub - Subtracts two integers
+ * @a: The integer to be subtracted from
+ * @b: The integer to subtract
  *
- * @a: First integer
- * @b: Second integer
- *
- * Return: Difference of a and b
+ * Return: The result of the subtraction
  */
 int op_sub(int a, int b)
 {
@@ -28,11 +26,10 @@ int op_sub(int a, int b)
 
 /**
  * op_mul - Multiplies two integers
+ * @a: The first integer to be multiplied
+ * @b: The second integer to be multiplied
  *
- * @a: First integer
- * @b: Second integer
- *
- * Return: Product of a and b
+ * Return: The result of the multiplication
  */
 int op_mul(int a, int b)
 {
@@ -41,27 +38,35 @@ int op_mul(int a, int b)
 
 /**
  * op_div - Divides two integers
+ * @a: The integer to be divided
+ * @b: The integer to divide by
  *
- * @a: First integer
- * @b: Second integer
- *
- * Return: Result of the division of a by b
+ * Return: The result of the division
  */
 int op_div(int a, int b)
 {
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	return (a / b);
 }
 
 /**
- * op_mod - Computes the modulo of two integers
+ * op_mod - Finds the remainder of two integers
+ * @a: The integer to be divided
+ * @b: The integer to divide by
  *
- * @a: First integer
- * @b: Second integer
- *
- * Return: Remainder of the division of a by b
+ * Return: The remainder of the division
  */
 int op_mod(int a, int b)
 {
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	return (a % b);
 }
 

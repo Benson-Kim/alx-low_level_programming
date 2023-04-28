@@ -1,12 +1,15 @@
 #include <stdio.h>
 
-void __attribute__ ((constructor)) premain()
-{
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+void beforeMain() {
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
 
-int main(void)
-{
-	/* main function code */
+int main() {
+	beforeMain();
+
+	// rest of the main function code goes here
+
 	return (0);
 }
+

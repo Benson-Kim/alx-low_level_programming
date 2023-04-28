@@ -1,21 +1,22 @@
-; hello.asm
-; 64-bit program in assembly that prints "Hello, Holberton" followed by a new line
+section .data
+    hello db "Hello, Holberton", 10, 0
 
-        global  main
-        extern  printf
+section .text
+    global main
 
-        section .data
-msg:    db      'Hello, Holberton', 0
+    extern printf
 
-        section .text
 main:
-        ; prepare arguments for printf
-        mov     rdi, msg            ; format string
-        xor     rax, rax            ; no floating-point arguments
+    ; Push the address of the string to the stack
+    push hello
 
-        ; call printf
-        call    printf
+    ; Call printf with the format string and pop the argument from the stack
+    mov rdi, hello
+    xor eax, eax
+    call printf
+    add rsp, 8  ; pop the argument from the stack
 
-        ; exit with status 0
-        xor     rax, rax
-        ret
+    ; Return from the main function
+    xor eax, eax
+    ret
+
